@@ -1,7 +1,7 @@
-#Building a Controller#
+# Building a Controller #
 
-##Body rate and roll/pitch control (scenario 2)##
-###Implemented body rate control and ###
+## Body rate and roll/pitch control (scenario 2) ##
+### Implemented body rate control and ###
 
 Code to implement the body rate:
 
@@ -26,7 +26,7 @@ Code for motor thrust command:
 
 Parameter values: kpPQR = 85, 65, 5
 
-###Implement roll/pitch controller:###
+### Implement roll/pitch controller: ###
 
 	  float c_d = collThrustCmd/mass;
 	        
@@ -55,10 +55,15 @@ performance matrics output:
 	PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
 
 Video showing the result for this:
-!(./animations/vivek_scenario2.mov) 
+
+<video width="320" height="240" controls>
+  <source src="./animations/vivek_scenario2.mov" type="video/mp4">
+</video>
 
 
-##Position/velocity and yaw angle control (scenario 3)##
+
+
+## Position/velocity and yaw angle control (scenario 3) ##
 
 ### Implement altitude controller (PD version) ###
 
