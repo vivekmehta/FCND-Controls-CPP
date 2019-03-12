@@ -1,7 +1,7 @@
-#Building a Controller
+#Building a Controller#
 
-##Body rate and roll/pitch control (scenario 2)
-###Implemented body rate control and 
+##Body rate and roll/pitch control (scenario 2)##
+###Implemented body rate control and ###
 
 Code to implement the body rate:
 
@@ -26,7 +26,7 @@ Code for motor thrust command:
 
 Parameter values: kpPQR = 85, 65, 5
 
-###Implement roll/pitch controller:
+###Implement roll/pitch controller:###
 
 	  float c_d = collThrustCmd/mass;
 	        
@@ -58,9 +58,9 @@ Video showing the result for this:
 !(./animations/vivek_scenario2.mov) 
 
 
-##Position/velocity and yaw angle control (scenario 3)
+##Position/velocity and yaw angle control (scenario 3)##
 
-### Implement altitude controller (PD version)
+### Implement altitude controller (PD version) ###
 
 		velZCmd = CONSTRAIN(velZCmd, -maxDescentRate, maxAscentRate);
 		float PTerm = kpPosZ*(posZCmd - posZ);
@@ -72,7 +72,7 @@ Video showing the result for this:
 		thrust = - mass * CONSTRAIN(zDotDot, -maxDescentRate/dt, maxAscentRate/dt);
 
 
-### Implement lateral position control 
+### Implement lateral position control ###
 
 		// Limiting the velcoity
 		if(velCmd.mag()>maxSpeedXY) {
@@ -88,7 +88,7 @@ Video showing the result for this:
 		}
 
 
-### Implement yaw control
+### Implement yaw control ###
 
 		if (yawCmd > 0 ) {
 	    	yawCmd = fmodf(yawCmd, 2 * F_PI);
@@ -113,18 +113,18 @@ PASS: ABS(Quad2.Pos.X) was less than 0.100000 for at least 1.250000 seconds
 PASS: ABS(Quad2.Yaw) was less than 0.100000 for at least 1.000000 seconds
 
 parameter values tuned are:
-# Position control gains
-kpPosXY = 30 #1
-kpPosZ = 25 #1
 
+		# Position control gains
+		kpPosXY = 30 #1
+		kpPosZ = 25 #1
 
-# Velocity control gains
-kpVelXY = 12
-kpVelZ = 10
+		# Velocity control gains
+		kpVelXY = 12
+		kpVelZ = 10
 
-# Angle control gains
-kpBank = 12 #5
-kpYaw = 2 #1
+		# Angle control gains
+		kpBank = 12 #5
+		kpYaw = 2 #1
 
 Unlike mentioned in suggestion kpVel values are half of kpPos which are working. 
 
@@ -146,7 +146,7 @@ Video showing the result for this:
 !(./animations/vivek_scenario4.mov) 
 
 
-##Tracking trajectories
+##Tracking trajectories ##
 
 Despite trying tuning for hours couldn't get the tuning with mass 0.4. But looking at python helper code given, i changed the mass to 0.5 and the evalution changed to pass.
 
