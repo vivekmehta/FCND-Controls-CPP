@@ -50,17 +50,16 @@ Parameter values: kpPQR = 85, 65, 5
 kpBank: 10
 
 performance matrics output:
-	Simulation #270 (../config/2_AttitudeControl.txt)
-	PASS: ABS(Quad.Roll) was less than 0.025000 for at least 0.750000 seconds
-	PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
+
+		Simulation #270 (../config/2_AttitudeControl.txt)
+		PASS: ABS(Quad.Roll) was less than 0.025000 for at least 0.750000 seconds
+		PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
 
 Video showing the result for this:
 
-<video width="320" height="240" controls>
-  <source src="./animations/vivek_scenario2.mov" type="video/mp4">
-</video>
-
-
+<p align="center">
+<img src="animations/vivek_scenario2.gif" width="500"/>
+</p>
 
 
 ## Position/velocity and yaw angle control (scenario 3) ##
@@ -135,11 +134,15 @@ Unlike mentioned in suggestion kpVel values are half of kpPos which are working.
 
 
 Video showing the result for this:
-!(./animations/vivek_scenario3.mov) 
 
-##Non-idealities and robustness (scenario 4)
+<p align="center">
+<img src="animations/vivek_scenario3.gif" width="500"/>
+</p>
 
-### Altitude controller is modififed:
+
+## Non-idealities and robustness (scenario 4) ##
+
+### Altitude controller is modififed: ##
 
 	integratedAltitudeError += (posZCmd - posZ)*dt;
 	float ITerm = KiPosZ * integratedAltitudeError
@@ -148,14 +151,20 @@ Video showing the result for this:
 
 
 Video showing the result for this:
-!(./animations/vivek_scenario4.mov) 
+
+<p align="center">
+<img src="animations/vivek_scenario4.gif" width="500"/>
+</p>
 
 
-##Tracking trajectories ##
+
+## Tracking trajectories ##
 
 Despite trying tuning for hours couldn't get the tuning with mass 0.4. But looking at python helper code given, i changed the mass to 0.5 and the evalution changed to pass.
 
 Here is video showing the result:
-!(./animations/vivek_scenario5.mov) 
+<p align="center">
+<img src="animations/vivek_scenario5.gif" width="500"/>
+</p>
 
 
